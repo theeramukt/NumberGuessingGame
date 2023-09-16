@@ -1,4 +1,3 @@
-#NumberGussingGame
 This Number Guessing Game developed by
 
 Nattida Yiamsanoi 6410742206,
