@@ -33,7 +33,6 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             NumberGuessingGameTheme {
-                // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
@@ -65,14 +64,12 @@ fun GuessNumButton(modifier: Modifier = Modifier) {
 
 
     Column(modifier = modifier, horizontalAlignment = Alignment.CenterHorizontally) {
-//        Image(painter = painterResource(imageResource), contentDescription = result.toString())
-
         Text(text = stringResource(R.string.guess),
-            fontSize = 24.sp,
-            onTextLayout = {}
-
+            fontSize = 24.sp
         )
+        
         Spacer(modifier = Modifier.height(220.dp))
+        
         TextField(
             value = text,
             onValueChange = { text = it },
@@ -82,11 +79,14 @@ fun GuessNumButton(modifier: Modifier = Modifier) {
         Text(text = hint,
             fontSize = 24.sp,
         )
+        
         Spacer(modifier = Modifier.height(200.dp))
+        
         Text(text = stringResource(R.string.count, count_round),
         )
 
         Spacer(modifier = Modifier.height(20.dp))
+        
         Button(
             onClick = {
                 if (play){
@@ -104,7 +104,7 @@ fun GuessNumButton(modifier: Modifier = Modifier) {
                 } else {
                     count_round = 0
                     play = true
-                    randNum = (1..1001).random()
+                    randNum = (1..1000).random()
                 }
             },
         ) {
